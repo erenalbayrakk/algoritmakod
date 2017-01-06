@@ -1,0 +1,38 @@
+#include <stdio.h>
+ 
+int main()
+{
+   int array[100], n, c, d, yer, dgstr;
+ 
+   printf("Elemanları giriniz\n");
+   scanf("%d", &n);
+ 
+   printf("Enter %d integers\n", n);
+ 
+   for ( c = 0 ; c < n ; c++ )
+      scanf("%d", &array[c]);
+ 
+   for ( c = 0 ; c < ( n - 1 ) ; c++ )
+   {
+      position = c;
+ 
+      for ( d = c + 1 ; d < n ; d++ )
+      {
+         if ( array[yer] > array[d] )
+            position = d;
+      }
+      if ( yer != c )
+      {
+         dgstr = array[c];
+         array[c] = array[yer];
+         array[yer] = dgstr;
+      }
+   }
+ 
+   printf("Sıraladım:\n");
+ 
+   for ( c = 0 ; c < n ; c++ )
+      printf("%d\n", array[c]);
+ 
+   return 0;
+}
