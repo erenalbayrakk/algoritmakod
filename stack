@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+struct stack{
+
+    int top;
+    int deger[10];
+    
+
+};
+
+struct stack s;
+
+void push(struct stack *ps, int x){
+    
+    if(ps->top==9)
+        printf("stack dolu");
+    else
+        ps->deger[(ps->top)++]=x;
+    
+}
+
+void pop(struct stack *ps){
+    if(ps->top==0)
+        printf("stack bos");
+    else
+        ps->top--;
+}
+
+
+int main()
+{
+    
+    int sayi=0;
+    while(sayi!=4){
+    printf("Lutfen bir secim yapin: \n 1. Ekleme\n 2. Silme \n 3. Listeleme\n 4. Cikis\n");
+        
+        scanf("%d",&sayi);
+
+    
+    switch(sayi){
+    case 1:
+        printf("Eklemek istediginiz sayiyi girin:");
+        int ekle;
+        scanf("%d",&ekle);
+        push(&s,ekle);
+        break;
+    case 2:
+        pop(&s);
+        break;
+    case 3:
+        if(s.top==0)
+            printf("Liste bos\n");
+        else
+            printf("\nListe:");
+
+        for(int a=0;a<s.top;a++)
+            printf("%d ",s.deger[a]);
+        printf("\n");
+        break;
+
+    }
+    }
+    getchar();
+    return 0;
+}
