@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <conio.h>
+
+typedef struct linked{
+int data;
+linked *next;
+}linked;
+
+void pop(linked *stk);
+void push(linked *stk,int i);
+
+int main(){
+
+//clrscr();
+linked *p,list1,list2,list3;
+
+list1.next=NULL;
+list1.data=3;
+
+list2.next=NULL;
+list2.data=4;
+
+list3.next=NULL;
+list3.data=5;
+
+
+list1.next=&list3;
+list3.next=&list2;
+
+p=&list1;
+
+while(p!=NULL){
+printf("-> %d ",p->data);
+p=p->next;
+}
+
+getchar();
+return 0;
+}
